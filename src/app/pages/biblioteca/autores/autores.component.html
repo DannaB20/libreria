@@ -1,1 +1,22 @@
-<p>autores works!</p>
+<form>
+  <div class="form-group">
+    <label for="formGroupExampleInput">nombre</label>
+    <input type="text" [(ngModel)]="nombre" class="form-control" id="formGroupExampleInput" placeholder="nombre">
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput">apellido</label>
+    <input type="text" [(ngModel)]="apellido" class="form-control" id="formGroupExampleInput" placeholder="apellido">
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput">fecha</label>
+    <input type="text" [(ngModel)]="fecha" class="form-control" id="formGroupExampleInput" placeholder="fecha">
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput">nacionalidad</label>
+    <input type="text" [(ngModel)]="nacionalidad" class="form-control" id="formGroupExampleInput" placeholder="nacionalidad">
+  </div>
+  <div class="form-group">
+   <button type="button" (click)="Saveform()">click</button>     
+  </div>
+
+</form>
