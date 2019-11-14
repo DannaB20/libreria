@@ -1,19 +1,30 @@
 {{titulo}}
 
-<form FormGroup="autoresformForm">
+<form [formGroup]="areasForm">
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4">Codigo</label>
-      <input type="email" FormControlName="code" class="form-control" placeholder="codigo">
+      <input type="email" formControlName="code" class="form-control" placeholder="codigo">
     </div>
   </div>
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4">descripcion</label>
-      <input type="email" FormControlName="description" class="form-control" placeholder="nombre">
+      <input type="email" formControlName="description" class="form-control" placeholder="nombre">
     </div>
  
   </div>
   
   <button type="submit" (click)="Saveform()" class="btn btn-primary">Guardar</button>
 </form>
+
+<table>
+  <tr>
+    <td>codigo</td>
+    <td>descripcion</td>
+  </tr>
+  <tr *ngFor="let area of areas">
+    <td>{{area.code}}</td>
+    <td>{{area.description}}</td>
+  </tr>
+</table>

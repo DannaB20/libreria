@@ -1,18 +1,32 @@
-<form>
+<form [formGroup]="editorialForm">
   <div class="form-group">
     <label for="formGroupExampleInput">codigo</label>
-    <input type="text" FormControlName="code"class="form-control" id="formGroupExampleInput" placeholder="nombre">
+    <input type="text" formControlName="code"class="form-control" id="formGroupExampleInput" placeholder="nombre">
   </div>
   <div class="form-group">
     <label for="formGroupExampleInput">descripcion</label>
-    <input type="text" FormControlName="description" class="form-control" id="formGroupExampleInput" placeholder="apellido">
+    <input type="text" formControlName="description" class="form-control" id="formGroupExampleInput" placeholder="apellido">
   </div>
   <div class="form-group">
     <label for="formGroupExampleInput">ciudad</label>
-    <input type="text" FormControlName="contry" class="form-control" id="formGroupExampleInput" placeholder="fecha">
+    <input type="text" formControlName="country" class="form-control" id="formGroupExampleInput" placeholder="fecha">
   </div>
   <div class="form-group">
    <button type="button" (click)="Saveform()">click</button>     
   </div>
 
 </form>
+
+<table>
+  <tr>
+    <td>codigo</td>
+    <td>descripcion</td>
+    <td>ciudad</td>
+  </tr>
+  <tr *ngFor="let editorial of editoriales">
+    <td>{{editorial.code}}</td>
+    <td>{{editorial.description}}</td>
+    <td>{{editorial.country}}</td>
+  </tr>
+</table>
+ 

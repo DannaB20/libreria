@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { AreasService } from 'src/app/service/areas.service';
 
 @Component({
   selector: 'app-areas',
@@ -8,14 +9,22 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class AreasComponent implements OnInit {
 
+
+areas:any;
 public areasForm:FormGroup;
 public titulo="formulario de Areas";
 
-  constructor( protected fb:FormBuilder) { }
+  constructor( protected fb:FormBuilder, protected service:AreasService) { 
+    this.createForm()
+  }
+  
 
   ngOnInit() {
-
+    this.service.getAreas().subscribe( data => {
+      this.areas=data
+    });
   }
+
   createForm(){
     this.areasForm = this.fb.group({
       code: ['', Validators.required],
@@ -27,7 +36,9 @@ public titulo="formulario de Areas";
  
 
 
-
+    Saveform(){
+      this.service.postAreas(this.areasForm.value).subscribe(data=>alert('listo'))
+    }
  
 
 }

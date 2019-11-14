@@ -1,42 +1,55 @@
 {{titulo}}
 
-<form FormGroup="autoresformForm">
+<form [formGroup]="autoresForm">
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4">Codigo</label>
-      <input type="email" FormControlName="code" class="form-control" placeholder="codigo">
+      <input type="email" formControlName="code" class="form-control" placeholder="codigo">
     </div>
   </div>
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4">Nombre</label>
-      <input type="email" FormControlName="name" class="form-control" placeholder="nombre">
+      <input type="email" formControlName="name" class="form-control" placeholder="nombre">
     </div>
   </div>
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4">Apellido</label>
-      <input type="email" FormControlName="lastname" class="form-control" placeholder="apellido">
+      <input type="email" formControlName="lastname" class="form-control" placeholder="apellido">
     </div>
   </div>
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4">Fecha de nacimiento</label>
-      <input type="email" FormControlName="bd_year" class="form-control" placeholder="fecha de nacimiento">
+      <input type="email" formControlName="bd_year" class="form-control" placeholder="fecha de nacimiento">
     </div>
   </div>
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4">Fecha de muerte</label>
-      <input type="email" FormControlName="death_year" class="form-control" placeholder="fecha de muerte">
+      <input type="email" formControlName="death_year" class="form-control" placeholder="fecha de muerte">
     </div>
   </div>
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4">Lugar de nacimiento</label>
-      <input type="email" FormControlName="bd_place" class="form-control" placeholder="lugar de nacimento">
+      <input type="email" formControlName="bd_place" class="form-control" placeholder="lugar de nacimento">
     </div>
   </div>
   
   <button type="submit" (click)="Saveform()" class="btn btn-primary">Guardar</button>
+
 </form>
+
+
+<table>
+  <tr>
+    <td>nombre</td>
+    <td>apellido</td>
+  </tr>
+  <tr *ngFor="let autores of autor">
+    <td>{{autores.name}}</td>
+    <td>{{autores.lastname}}</td>
+  </tr>
+</table>
